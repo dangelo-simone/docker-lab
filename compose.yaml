@@ -23,7 +23,3 @@ services:
       MARIADB_DATABASE: exampledb
     volumes:
       - db:/var/lib/mysql
-
-volumes:
-  wordpress:
-  db:
