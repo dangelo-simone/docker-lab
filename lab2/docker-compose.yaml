@@ -1,0 +1,36 @@
+services:
+  grafana:
+    image: grafana/grafana-enterprise
+    user: "1000" #id -u output
+    container_name: grafana
+    restart: unless-stopped    
+    volumes:
+      - ./data/grafana_data:/var/lib/grafana
+    ports:
+      - '3000:3000'
+
+  wordpress:
+    image: wordpress
+    restart: always
+    container_name: wordpress
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: exampleuser
+      WORDPRESS_DB_PASSWORD: examplepass
+      WORDPRESS_DB_NAME: exampledb
+    volumes:
+      - ./data/wp_data:/var/www/html
+ 
+  db:
+    image: mariadb
+    restart: always
+    container_name: mariadb
+    environment:
+      MARIADB_ROOT_PASSWORD: example
+      MARIADB_USER: exampleuser
+      MARIADB_PASSWORD: examplepass
+      MARIADB_DATABASE: exampledb
+    volumes:
+      - ./data/db_data:/var/lib/mysql
