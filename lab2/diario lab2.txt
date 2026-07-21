@@ -4,7 +4,7 @@ localhost:8080 login:admin pass:admin
 
 cat compose.yml (quello del lab 1) >> docker-compose.yml (quello di Grafana) così ho lo stack nello stesso network
 
-configuro data source su Grafana:
+configuro data source su Grafana GUI:
 	database: db:3306 (va usato nome del servizio, non localhost, altrimenti non lo trova nel network)
 	db name, user, pass: quelli nel compose
 
@@ -12,3 +12,4 @@ query su Grafana funzionano-> db esiste e ha dati
 
 con una query ho popolato la tabella dei post di wp così c'è qualcosa da monitorare
 
+espando compose con il compose del tutorial di loki
