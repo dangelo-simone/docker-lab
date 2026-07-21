@@ -1,3 +1,9 @@
+#compose della copia che ha stessi dati di partenza ma su volumi separati
+#ho fatto il dump come nel bonus
+#compose up con nuova porta
+#testo facendo modifiche solo sul sito che è su 8081 e controllo che non si aggiorni anche il sito su 8080: funziona
+
+
 services:
 
   wordpress:
