@@ -93,3 +93,5 @@ ritesto pingando:
 ping: loki: Temporary failure in name resolution
 [simone@Atlas prod]$ cd ../monitoring && docker compose exec grafana ping -c2 wordpress
 ping: bad address 'wordpress'
+
+ovviamente se spengo il monitoring wordpress rimane comunque up
